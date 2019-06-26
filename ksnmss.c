@@ -513,8 +513,6 @@ void set_random_pad(u32 indx, u32 height, u8 randpad[sklen]){
 
 	ina[64] = height;
 
-	ECRYPT_keysetup(&seed_ctx,hk_seed,256,64);
-	ECRYPT_ivsetup(&seed_ctx,hk_iv);
 	ECRYPT_encrypt_bytes(&seed_ctx,ina,randpad,128);
 	
 }
