@@ -1,5 +1,19 @@
+#define sklen 128
+
 #include "ntt16.h"
+//#include "../ChaCha20/ecrypt-sync.h"
+//#include "../merkle-tree.h"
 //#include "../ChaCha20/chacha.c"
+
+typedef int8_t u8;
+typedef int16_t u16;
+typedef int32_t u32;
+
+/*
+typedef struct {
+	u32 input[16];
+} ECRYPT_ctx;
+*/
 
 inline void parse(int xbyte[16][4], u8 x[sklen]){
 	int i,j,k,row_t;
@@ -89,7 +103,7 @@ void print(vec Y){
 }
 
 
-inline void SWIFFT(int xbyte[16][4],vec A[16][4], u8 *hop){
+void SWIFFT(int xbyte[16][4],vec A[16][4], u8 *hop){
 	int i1;
 	int k0;
 	vec Yt[8];
@@ -227,6 +241,7 @@ int gSWIFFT(int x[16][64], vec A[16][4], u32 *pk){
 	}
 }
 */
+/*
 void set_Key(u32 indx, u32 height){
 	int y[16][64];
 	int i,k,j;
@@ -285,6 +300,7 @@ void set_Key(u32 indx, u32 height){
 	
 	
 }
+*/
 void unpack_rgY(vec Y[4],u32 *pk){
 	int i,j;
 	//u32 opi[4][16];
